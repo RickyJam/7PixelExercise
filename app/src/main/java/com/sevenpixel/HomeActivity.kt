@@ -60,17 +60,17 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showAnimalSelectionDialog() {
         val dialog: android.app.AlertDialog = android.app.AlertDialog.Builder(this)
-            .setTitle("Seleziona l'animale che preferisci:")
+            .setTitle(getString(R.string.title_activity_select_animal_dialog))
             .setCancelable(false)
             .setPositiveButton("Gatto") { _, _ ->
                 SharedPref.animalSelected = AnimalType.AnimalTypeEnum.CAT
                 SharedPref.storeSelectedAnimal()
-                homeTitle.text = SharedPref.animalSelected.toString()
+                homeTitle.text = getString(SharedPref.animalSelected!!.catText)
             }
             .setNegativeButton("CANE") { _, _ ->
                 SharedPref.animalSelected = AnimalType.AnimalTypeEnum.DOG
                 SharedPref.storeSelectedAnimal()
-                homeTitle.text = SharedPref.animalSelected.toString()
+                homeTitle.text = getString(SharedPref.animalSelected!!.catText)
             }.create()
         dialog.show()
     }

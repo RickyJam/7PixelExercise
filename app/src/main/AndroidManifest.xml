@@ -22,7 +22,7 @@
 
         <activity
             android:name=".dialog.SelectAnimalDialog"
-            android:label="@string/title_activity_selecte_animal_dialog"
+            android:label="@string/title_activity_select_animal_dialog"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".HomeActivity">
             <intent-filter>
