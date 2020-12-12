@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
         if(SharedPref.animalSelected == null){
             showAnimalSelectionDialog()
         } else {
-            homeTitle.text = SharedPref.animalSelected.toString()
+            homeTitle.text = getString(SharedPref.animalSelected!!.catText)
         }
 
         Utility.startNetworkIntent(
