@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">7pixel</string>
+    <string name="title_activity_selecte_animal_dialog">SelecteAnimalDialog</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="animal_choice_text">Scegli l\'animale premendo il pulsante!</string>
+    <string name="cat_button_text">Gatto</string>
+    <string name="dog_button_text">Cane</string>
+    <string name="title_activity_quote_detail">QuoteDetailActivity</string>
+    <string name="contentDescrImage">image download from internet</string>
+    <string name="quote_title">Quote:</string>
+    <string name="fab_description">FAB used to change animal!</string>
+</resources>
