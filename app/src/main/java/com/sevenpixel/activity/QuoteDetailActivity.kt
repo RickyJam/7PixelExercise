@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.content_quote_detail.*
 
 class QuoteDetailActivity : AppCompatActivity() {
 
+    lateinit var url: String
+
     companion object{
         const val QUOTE_ID = "QUOTE"
     }
@@ -26,7 +28,7 @@ class QuoteDetailActivity : AppCompatActivity() {
 
         quoteText.text = intent.getStringExtra(QUOTE_ID)
 
-        val url = if (SharedPref.animalSelected == AnimalType.AnimalTypeEnum.CAT)
+        url = if (SharedPref.animalSelected == AnimalType.AnimalTypeEnum.CAT)
             Urls.randomCat
         else
             Urls.randomDog
@@ -45,7 +47,15 @@ class QuoteDetailActivity : AppCompatActivity() {
             if(responseIntent != null) {
                 val nwkFile = NetworkFile.Deserializer().deserialize(String(responseIntent))
                 if (nwkFile != null) {
-                    Picasso.get().load(nwkFile.urlImage).into(imageView)
+                    if(nwkFile.urlImage.endsWith(".mp4") || nwkFile.urlImage.endsWith(".webm")){
+                        Utility.startNetworkIntent(
+                            activity = this,
+                            applicationContext = applicationContext,
+                            url = url
+                        )
+                    } else {
+                        Picasso.get().load(nwkFile.urlImage).into(imageView)
+                    }
                 }
             }
         }
